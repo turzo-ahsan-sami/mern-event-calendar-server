@@ -18,9 +18,10 @@ app.use(cors());
 app.use(express.json());
 
 // client
-app.use('/', express.static('../client/build'));
+// app.use('/', express.static('../client/build'));
 
 // api end points
+app.get('/', (req, res) => { res.send('hello world') });
 app.use('/api/events', eventsRouter);
 app.use('/api/users', usersRouter);
 
